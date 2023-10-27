@@ -1,0 +1,41 @@
+﻿@page "/"
+
+<div class="control_wrapper">
+
+    <SfMultiSelect TValue="string[]" TItem="GamesDataModel" Placeholder="Select a game" DataSource="@GamesData"
+                   PopupHeight="450px" PopupWidth="250px">
+        <MultiSelectFieldSettings Text="Name" Value="ID"></MultiSelectFieldSettings>
+    </SfMultiSelect>
+</div>
+
+
+
+@code {
+    public class GamesDataModel
+    {
+        public string ID { get; set; }
+        public string Name { get; set; }
+    }
+
+    List<GamesDataModel> GamesData = new List<GamesDataModel>
+    {
+        new GamesDataModel() { ID= "Game1", Name= "Badminton" },
+        new GamesDataModel() { ID= "Game2", Name= "Basketball" },
+        new GamesDataModel() { ID= "Game3", Name= "Cricket" },
+        new GamesDataModel() { ID= "Game4", Name= "Football" },
+        new GamesDataModel() { ID= "Game5", Name= "Golf" },
+        new GamesDataModel() { ID= "Game6", Name= "Hockey" },
+        new GamesDataModel() { ID= "Game7", Name= "Tennis"}
+    };
+
+}
+
+<style>
+    .control_wrapper {
+        width: 250px;
+        margin-left: 40%;
+        margin-right: 40%;
+        margin-top: 15%;
+        margin-bottom: 15%;
+    }
+</style>
